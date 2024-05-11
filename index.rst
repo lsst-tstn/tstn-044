@@ -5,7 +5,8 @@ Night Planning Tool
 .. abstract::
 
    This technote describes the design of an integrated night planning tool.
-   This is a tools that allows our team to collect a group of Jira tickets describing a set of tests/observations, allows us to organize these into a coherent list that can later be loaded and executed at the summit.
+   This is a tool that allows our team to collect a group of Jira tickets describing a set of tests/observations.
+   It will also help us organize these into a coherent list that can later be loaded and executed at the summit.
 
 Introduction
 ============
@@ -15,18 +16,23 @@ This process involves a combination of Jira projects:
 
 - SITCOM are used to capture high level tests/verification activities.
   They are usually connected to one or more requirement or some other commissioning activity.
-  For example, SITCOM-1099 was created to capture the tests required to validate the operation of the system with the TMA dynamic settings going from 5% all the way to 100% of its requirements.
+  For example, `SITCOM-1099`_ was created to capture the tests required to validate the operation of the system with the TMA dynamic settings going from 5% all the way to 100% of its requirements.
 
 - DM tickets are used to capture work needed either by a regular contruction deliverable or a commissioning activity.
   DM tickets can be linked to SITCOM tickets when there is work required to accomplish a particular test, but they can also be standalone ticket that are just broadly required.
-  For instance, in the example above of SITCOM-1099, we have DM-39533 linked as a related ticket.
-  It is not strickly necessary to have this relantionship as DM-39533 represents a broader system functionality, however the issues are linked to demonstrate the relantionship.
+  For instance, in the example above of `SITCOM-1099`_, we have `DM-39533`_ linked as a related ticket.
+  It is not strickly necessary to have this relantionship as `DM-39533`_ represents a broader system functionality, however the issues are linked to demonstrate the relantionship.
   Sometimes a SITCOM ticket might trigger the development of systewide functionality and the relantionship is used to indicate it.
 
 - BLOCK tickets are used to design, plan, execute and track activities at the summit.
   Usually a BLOCK ticket will be linked to a SITCOM ticket.
 
+.. _SITCOM-1099: https://rubinobs.atlassian.net/browse/SITCOM-1099
+.. _DM-39533: https://rubinobs.atlassian.net/browse/DM-39533
+
 Up to now, planning activities at the summit have revolved around collecting the BLOCK tickets that will be executed at night and sorting them out in a table with some information about priority and order of execution.
+`This page <https://confluence.lsstcorp.org/display/LSSTCOM/2024-04-23+Simonyi+Night+Log>`__ contains the plan for the night of 2024-04-23.
+
 Later, the summit crew adds information to these tables about the execution and are also required to do more detailed logging in LOVE/OLE. 
 Gathering information later about task execution and performing traceability under these conditions is taxing.
 Users have to peruse the night logs for detailed information and also check the confluence page with the night plan.
@@ -41,6 +47,7 @@ We will adopt Jira's Zephyr application to create test cases, test cycles and te
 - BLOCK tickets will be used to describe what the block does, link it to a particular SITCOM ticket and will also aggregate the block configuration.
 
 - Test Cases will have a step by step description of how to execute a particular BLOCK.
+  Including instructions to setup/wrap-up.
 
 - Test Cycles will be used to plan a particular night.
   They contain a list of Test Cases, ordered in the same way they should be executed.
@@ -93,4 +100,32 @@ Through this interface users would be able to:
 - Feed the information back to Jira.
 
   All metadata generated at the summit by this tool will be fed back to jira to allow for better traceability.
+
+FAQ
+===
+
+.. note::
+
+  This session is to capture any discussion points made while reviewing this document.
+  Things here can be deleted afterwards if incorporated to the document or kept for historical reasons.
+
+- Should we always have a BLOCK ticket associated with a Test Case?
+
+- What are the values for the "Environment" field we should adopt and how are we going to use it?
+
+  Current suggestion is to use it as a "time block aggregator" with the following values:
+
+  - Time Critical
+
+  - Daytime
+
+  - Late Afternoon
+
+  - Early Night
+
+  - Mid Night
+
+  - Late Night
+
+  - End Night
 
