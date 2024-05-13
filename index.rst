@@ -46,6 +46,8 @@ We will adopt Jira's Zephyr application to create test cases, test cycles and te
 
 - BLOCK tickets will be used to describe what the block does, link it to a particular SITCOM ticket and will also aggregate the block configuration.
 
+  See the :external+obsops:ref:`BLOCK project workflow <BLOCK-Jira-Workflow>` documentation for more information.
+
 - Test Cases will have a step by step description of how to execute a particular BLOCK.
   Including instructions to setup/wrap-up.
 
@@ -109,7 +111,13 @@ FAQ
   This session is to capture any discussion points made while reviewing this document.
   Things here can be deleted afterwards if incorporated to the document or kept for historical reasons.
 
-- Should we always have a BLOCK ticket associated with a Test Case?
+- On the relantionship between BLOCK tickets and Test Cases:
+
+  - Do we need BLOCK tickets if we have Test Cases?
+
+    - Should we always have a BLOCK ticket associated with a Test Case?
+
+    - What information should go on a BLOCK ticket and what should go in the Test Case?
 
 - What are the values for the "Environment" field we should adopt and how are we going to use it?
 
